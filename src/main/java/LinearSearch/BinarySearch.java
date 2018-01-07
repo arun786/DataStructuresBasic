@@ -52,10 +52,14 @@ public class BinarySearch {
                 lowIndex = middleIndex + 1;
             } else {
                 lowIndex = highIndex + 1;
-                return middleIndex;
+                if (numbers[middleIndex] == value) {
+                    return middleIndex;
+                } else {
+                    return -1;
+                }
             }
         }
-        return middleIndex;
+        return -1;
     }
 
     /**
@@ -67,7 +71,7 @@ public class BinarySearch {
         for (int i = size - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (numbers[j] > numbers[j + 1]) {
-                    numbers = swap(j, j + 1, numbers);
+                    swap(j, j + 1, numbers);
                 }
             }
         }
@@ -80,11 +84,10 @@ public class BinarySearch {
      * @param numbers
      * @return This method swaps the number in the array as per the index passed
      */
-    private int[] swap(int index1, int index2, int[] numbers) {
+    private void swap(int index1, int index2, int[] numbers) {
         int temp = numbers[index1];
         numbers[index1] = numbers[index2];
         numbers[index2] = temp;
-        return numbers;
     }
 
     /**

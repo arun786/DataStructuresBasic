@@ -61,10 +61,11 @@ Note : Binary search works on Sorted array/numbers only.
                     lowIndex = middleIndex + 1;
                 } else {
                     lowIndex = highIndex + 1;
+                    if(numbers[middleIndex] == value)
                     return middleIndex;
                 }
             }
-            return middleIndex;
+            return -1;
         }
     
         /**
