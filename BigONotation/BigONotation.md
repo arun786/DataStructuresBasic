@@ -31,3 +31,23 @@ Linear Search
         }
         return indexesWithValues;
     }
+    
+## Big O of N^2
+
+    /**
+    * O(N^2) , the best example being Bubble Sort
+    */
+    public void bubbleSort() {
+    
+    for (int i = numbers.length-1; i > 0; i--) {
+        for (int j = 0; j < i; j++) {
+    
+            if (numbers[j] > numbers[j + 1]) {
+                swap(j, j + 1);
+            }
+        }
+    }
+    
+    System.out.println(Arrays.toString(numbers));
+    
+    }
